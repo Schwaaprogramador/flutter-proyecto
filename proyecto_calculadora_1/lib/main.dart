@@ -21,7 +21,7 @@ class CalculadoraAppState extends State<CalculadoraApp> {
       debugShowCheckedModeBanner: false,
       title: "Calculadora",
       home: Scaffold(
-        backgroundColor:const Color.fromARGB(255, 13, 213, 228),
+        backgroundColor:Color.fromARGB(255, 214, 228, 13),
         body: Container(
           padding: const EdgeInsets.all(12),
           child: Column(
@@ -30,7 +30,7 @@ class CalculadoraAppState extends State<CalculadoraApp> {
               Container(
                 child: Padding(
                   padding: const EdgeInsets.only(right: 12), 
-                  child: Text("Historial", style: GoogleFonts.rubik(
+                  child: Text("Historial",  style: GoogleFonts.rubik(
                       textStyle: const TextStyle(
                         fontSize: 24,
                         color: Colors.white
