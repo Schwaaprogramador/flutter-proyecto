@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class Calcbuttom extends StatelessWidget {
   
   final Function callback;
   final String text;
-  const Calcbuttom({super.key, required this.callback, required this.text});
+  final double textSize;
+  const Calcbuttom({super.key, required this.callback, required this.text, this.textSize=28});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,14 @@ class Calcbuttom extends StatelessWidget {
         child: TextButton(
           onPressed: ()=>{callback(text)},
           style: TextButton.styleFrom(
-            foregroundColor: Colors.white
+            foregroundColor: Colors.white, 
+            padding: const EdgeInsets.all(12),
+            textStyle: const TextStyle(fontSize: 20)                
+          ),
+          child: Text(
+            text,
+            style: GoogleFonts.rubik(textStyle: TextStyle(fontSize: textSize)),
+            
           ),
         )
         ),
