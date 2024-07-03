@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemones/src/widgets/header_widget.dart';
+import 'package:pokemones/src/widgets/lista_widgets.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,11 +12,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Color.fromARGB(255, 16, 16, 16),
       body: Column(
-        children: const <Widget>[
-          HeaderWidget()
+        children: <Widget>[
+          HeaderWidget(),
+          ListaPersonajes(),
         ]
       ),
     );
