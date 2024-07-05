@@ -12,14 +12,19 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 16, 16, 16),
-      body: Column(
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 16, 16, 16),
+      body: const Column(
         children: <Widget>[
           HeaderWidget(),
           ListaPersonajes(),
         ]
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor:const Color.fromARGB(255, 95, 25, 208),
+        onPressed:()=>{},
+        child: const Icon(Icons.add),
+        ),
     );
   }
 }

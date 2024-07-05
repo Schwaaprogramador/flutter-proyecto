@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:pokemones/src/pages/detalle_page.dart';
 
 class ListaPersonajes extends StatefulWidget {
   const ListaPersonajes({super.key});
@@ -57,47 +57,52 @@ class _ListaPersonajesState extends State<ListaPersonajes> {
   }
 
 
-  Widget bloquePersonajes(String name, int color, String imagen){
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: const Color.fromARGB(255, 43, 43, 43),
-      ),
-      height:65,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                boxShadow: [BoxShadow(
-                    blurRadius: 10,
-                    offset: const Offset(0, 0),                
-                    color: Color(color),
-                  )
-                ],
-                borderRadius: BorderRadius.circular(20)
+  Widget bloquePersonajes(String name, int colyr, String imagen){
+    return GestureDetector(
+      onTap: ()=>{
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetallePage(color: colyr)))
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: const Color.fromARGB(255, 43, 43, 43),
+        ),
+        height:65,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(
+                      blurRadius: 10,
+                      offset: const Offset(0, 0),                
+                      color: Color(colyr),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(20)
+                  ),
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset("assets/$imagen.png"),
                 ),
-                padding: const EdgeInsets.all(8),
-                child: Image.asset("assets/$imagen.png"),
-              ),
-              const SizedBox(
-                  width: 20,
-              ),
-              Text(name, style: const TextStyle(
-                fontSize: 16,
-                color: Colors.white
-              ),)
-            ],
-          ),
-          IconButton(onPressed: ()=>{}, icon: const Icon(
-            Icons.more_rounded,
-            color: Colors.grey,
-          ))
-        ],
-      )
+                const SizedBox(
+                    width: 20,
+                ),
+                Text(name, style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white
+                ),)
+              ],
+            ),
+            IconButton(onPressed: ()=>{}, icon: const Icon(
+              Icons.more_rounded,
+              color: Colors.grey,
+            ))
+          ],
+        )
+      ),
     );
   }
 
